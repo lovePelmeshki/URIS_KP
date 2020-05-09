@@ -1,5 +1,6 @@
 ﻿using System.Windows;
-
+using URIS_KP.View;
+using URIS_KP.ViewModel;
 
 namespace URIS_KP
 {
@@ -12,5 +13,15 @@ namespace URIS_KP
         {
             InitializeComponent();
         }
+
+        private void Button_Page1_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Page1();
+        }
+        private void Button_Page2_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Page2();
+        }
+
     }
 }
