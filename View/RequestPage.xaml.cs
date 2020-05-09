@@ -34,5 +34,10 @@ namespace URIS_KP.View
             }
 
         }
+
+        private void buttonAddNewRequest_Click(object sender, RoutedEventArgs e)
+        {
+            //open new window
+        }
     }
 }

@@ -15,8 +15,11 @@
     </Page.Resources>
 
     <Grid>
-        <DataGrid x:Name="dataGridRequestPage">
-            
-        </DataGrid>
+        <DockPanel LastChildFill="True">
+            <Button x:Name="buttonAddNewRequest" DockPanel.Dock="Bottom" Style="{StaticResource stdBtn}" Content="Добавить" Margin="5" Click="buttonAddNewRequest_Click"/>
+            <DataGrid x:Name="dataGridRequestPage" Margin="5,5,5,0">
+
+            </DataGrid>
+        </DockPanel>
     </Grid>
 </Page>

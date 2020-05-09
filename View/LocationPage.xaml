@@ -15,8 +15,12 @@
     </Page.Resources>
 
     <Grid>
-        <DataGrid x:Name="dataGridLicaationPage">
-            
-        </DataGrid>
+        <DockPanel LastChildFill="True">
+            <Button x:Name="buttonAddNewLocation" DockPanel.Dock="Bottom" Style="{StaticResource stdBtn}" Content="Добавить" Margin="5" Click="buttonAddNewLocation_Click"/>
+            <DataGrid x:Name="dataGridLicaationPage" Margin="5,5,5,0">
+
+            </DataGrid>
+        </DockPanel>
+
     </Grid>
 </Page>

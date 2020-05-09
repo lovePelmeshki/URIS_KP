@@ -16,8 +16,13 @@
 
     <Grid>
         <DockPanel LastChildFill="True">
-            <Button x:Name="buttonAddNewEmployee" DockPanel.Dock="Bottom" Height="36" Width="150"/>
-            <DataGrid x:Name="dataGridEmployeePage" DockPanel.Dock="Top">
+            <Button x:Name="buttonAddNewEmployee" 
+                    DockPanel.Dock="Bottom" 
+                    Style="{StaticResource stdBtn}"
+                    Margin="0,0,0,5"
+                    Content="Добавить"
+                    Click="buttonAddNewEmployee_Click"/>
+            <DataGrid x:Name="dataGridEmployeePage" DockPanel.Dock="Top" Margin="5">
 
             </DataGrid>
         </DockPanel>
