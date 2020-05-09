@@ -23,6 +23,16 @@ namespace URIS_KP.View
         public Page2()
         {
             InitializeComponent();
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                dataGridLicaationPage.ItemsSource = db.Locations.ToList();
+            }
+
         }
     }
 }

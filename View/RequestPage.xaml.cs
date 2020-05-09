@@ -23,6 +23,16 @@ namespace URIS_KP.View
         public Page1()
         {
             InitializeComponent();
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                dataGridRequestPage.ItemsSource = db.Requests.ToList();
+            }
+
         }
     }
 }

@@ -7,35 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowState="Maximized"
         >
+    <Window.Resources>
+        <Style x:Key="stdBtn" TargetType="Button">
+            <Setter Property="Width" Value="160"/>
+            <Setter Property="Height" Value="36"/>
+        </Style>
+    </Window.Resources>
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" >
-            <Button Content="Заявки" Margin="1" Click="Button_Page1_Click"/>
-            <Button Content="Локации" Margin="1" Click="Button_Page2_Click"/>
-            <Button Content="Датчики" Margin="1" Click="Button_Page2_Click"/>
-            <Button Content="Обслуживание" Margin="1" Click="Button_Page2_Click"/>
-            <Button Content="Персоснал" Margin="1" Click="Button_Page2_Click"/>
+            <Button Content="Главная" Margin="1" Click="Button_Main_Click"/>
+            <Button Content="Заявки" Margin="1" Click="Button_Request_Click"/>
+            <Button Content="Локации" Margin="1" Click="Button_Locations_Click"/>
+            <Button Content="Датчики" Margin="1" Click="Button_Detectors_Click"/>
+            <Button Content="Обслуживание" Margin="1" Click="Button_Service_Click"/>
+            <Button Content="Персоснал" Margin="1" Click="Button_Employees_Click"/>
             <TextBox Text="{Binding Nums}"/>
         </StackPanel>
         <StackPanel Name="Search_StackPanel" Orientation="Horizontal" Height="25" VerticalAlignment="Top" Margin="0,26,0,0">
             <Image Height="25" Width="25"/>
-            <TextBox x:Name="Search_TextBox" Text="Search"/>
-            <CheckBox x:Name="checkBox" Content="CheckBox" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox"  Width="120" 
-                 IsEnabled="{Binding ElementName=checkBox, Path=IsChecked}" Margin="5,0,0,0"/>
-            <TextBox x:Name="textBox2"  Width="120">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=checkBox, Path=IsChecked}" Value="False">
-                                <Setter Property="Visibility" Value="Collapsed"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
+            <TextBox x:Name="Search_TextBox" Text="Search" Height="25" Margin="0,0,0,0" Width="343"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,50,0,0"  Source="/URIS_KP;component/View/MainPage.xaml" NavigationUIVisibility="Hidden" >
 
