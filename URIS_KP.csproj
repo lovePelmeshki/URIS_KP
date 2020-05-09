@@ -76,14 +76,26 @@
     <Compile Include="Model\Service.cs" />
     <Compile Include="Services\IDataService.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\DetectorAddWindow.xaml.cs">
+      <DependentUpon>DetectorAddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetectorPage.xaml.cs">
       <DependentUpon>DetectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeAddWindow.xaml.cs">
+      <DependentUpon>EmployeeAddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeePage.xaml.cs">
       <DependentUpon>EmployeePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LocationAddWindow.xaml.cs">
+      <DependentUpon>LocationAddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RequestAddWindow.xaml.cs">
+      <DependentUpon>RequestAddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RequestPage.xaml.cs">
       <DependentUpon>RequestPage.xaml</DependentUpon>
@@ -91,14 +103,29 @@
     <Compile Include="View\LocationPage.xaml.cs">
       <DependentUpon>LocationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ServiceAddWindow.xaml.cs">
+      <DependentUpon>ServiceAddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\DetectorAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DetectorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EmployeeAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LocationAddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,11 +146,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\RequestAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RequestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LocationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ServiceAddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

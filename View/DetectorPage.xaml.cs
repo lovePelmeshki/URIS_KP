@@ -20,15 +20,8 @@ namespace URIS_KP.View
 
         private void buttonAddNewDetector_Click(object sender, RoutedEventArgs e)
         {
-            using (DataBaseContext db = new DataBaseContext())
-            {
-                db.Detectors.Add(new Detector()
-                {
-                    // тут заполнить форму
-                });
-                db.SaveChanges();
-                Refresh();
-            }
+            DetectorAddWindow detectorAddWindow = new DetectorAddWindow();
+            detectorAddWindow.Show();
         }
         private void Refresh()
         {

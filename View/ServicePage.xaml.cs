@@ -37,7 +37,8 @@ namespace URIS_KP.View
 
         private void buttonAddNewService_Click(object sender, RoutedEventArgs e)
         {
-            //open new window
+            ServiceAddWindow serviceAddWindow = new ServiceAddWindow();
+            serviceAddWindow.Show();
         }
     }
 }

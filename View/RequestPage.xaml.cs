@@ -37,7 +37,8 @@ namespace URIS_KP.View
 
         private void buttonAddNewRequest_Click(object sender, RoutedEventArgs e)
         {
-            //open new window
+            RequestAddWindow requestAddWindow = new RequestAddWindow();
+            requestAddWindow.Show();
         }
     }
 }

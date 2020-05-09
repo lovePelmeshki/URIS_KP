@@ -38,15 +38,8 @@ namespace URIS_KP.View
 
         private void buttonAddNewEmployee_Click(object sender, RoutedEventArgs e)
         {
-            using (DataBaseContext db = new DataBaseContext())
-            {
-                db.Employees.Add(new Employee()
-                {
-                    // тут заполнить форму
-                });
-                db.SaveChanges();
-                Refresh();
-            }
+            EmployeeAddWindow employeeAddWindow = new EmployeeAddWindow();
+            employeeAddWindow.Show();
         }
     }
 }

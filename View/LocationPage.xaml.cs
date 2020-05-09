@@ -37,7 +37,8 @@ namespace URIS_KP.View
 
         private void buttonAddNewLocation_Click(object sender, RoutedEventArgs e)
         {
-            //open new window
+            LocationAddWindow locationAddWindow = new LocationAddWindow();
+            locationAddWindow.Show();
         }
     }
 }
