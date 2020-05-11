@@ -30,15 +30,56 @@ namespace URIS_KP.View
         {
             using (DataBaseContext db = new DataBaseContext())
             {
+              //  dg.ItemsSource = db.Locations.ToList();
                 dataGridLicaationPage.ItemsSource = db.Locations.ToList();
             }
-
         }
 
         private void buttonAddNewLocation_Click(object sender, RoutedEventArgs e)
         {
             LocationAddWindow locationAddWindow = new LocationAddWindow();
             locationAddWindow.Show();
+        }
+
+        private void Page_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void textBox_search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                if (textBox_search.Text.Equals(""))
+                {
+                    Refresh();
+                }else
+                {
+                    var locations = from loc in db.Locations
+                                    where loc.Name.ToLower().Contains(textBox_search.Text.ToLower())
+                                    select loc;
+                    dataGridLicaationPage.ItemsSource = locations.ToList();
+                }
+            }
+
+        }
+
+        private void Delete_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                try
+                {
+                    int id = ((Location)dataGridLicaationPage.SelectedItem).Id;
+                    MessageBox.Show(id.ToString());
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
         }
     }
 }

@@ -22,7 +22,24 @@
                     Margin="0,0,0,5"
                     Content="Добавить"
                     Click="buttonAddNewEmployee_Click"/>
-            <DataGrid x:Name="dataGridEmployeePage" DockPanel.Dock="Top" Margin="5">
+            <DataGrid x:Name="dataGridEmployeePage"
+                      DockPanel.Dock="Top" 
+                      Margin="5" 
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Просмотр" Click="MenuShowItem_Click"/>
+                        <MenuItem Header="Редактировать" Click="MenuEditItem_Click"/>
+                        <MenuItem Header="Удалить" Click="MenuDeleteItem_Click"/>
+                        
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=SecondName}"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}"/>
+                </DataGrid.Columns>
 
             </DataGrid>
         </DockPanel>

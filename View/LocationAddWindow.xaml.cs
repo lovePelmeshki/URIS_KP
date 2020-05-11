@@ -23,5 +23,27 @@ namespace URIS_KP.View
         {
             InitializeComponent();
         }
+ 
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                try
+                {
+                    db.Locations.Add(new Location()
+                    {
+                        Name = textBox.Text,
+                        DistrictId = comboBox.SelectedIndex + 1
+                    });
+                    db.SaveChanges();
+                    Close();
+                } 
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:URIS_KP.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page2" ShowsNavigationUI="False">
+      Title="Page2" ShowsNavigationUI="False" MouseEnter="Page_MouseEnter">
     <Page.Resources>
         <Style x:Key="stdBtn" TargetType="Button">
             <Setter Property="Width" Value="160"/>
@@ -16,11 +16,20 @@
 
     <Grid>
         <DockPanel LastChildFill="True">
+            <TextBox x:Name="textBox_search" DockPanel.Dock="Top" Height="36" TextChanged="textBox_search_TextChanged"/>
             <Button x:Name="buttonAddNewLocation" DockPanel.Dock="Bottom" Style="{StaticResource stdBtn}" Content="Добавить" Margin="5" Click="buttonAddNewLocation_Click"/>
-            <DataGrid x:Name="dataGridLicaationPage" Margin="5,5,5,0">
-
+            <DataGrid x:Name="dataGridLicaationPage" Margin="5,5,5,0"
+                      CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Watch" Click="Delete_MenuItem_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
+                </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
-
     </Grid>
 </Page>

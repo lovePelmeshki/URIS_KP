@@ -85,11 +85,17 @@
     <Compile Include="View\EmployeeAddWindow.xaml.cs">
       <DependentUpon>EmployeeAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EmployeeOverview.xaml.cs">
+      <DependentUpon>EmployeeOverview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeePage.xaml.cs">
       <DependentUpon>EmployeePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LocationAddWindow.xaml.cs">
       <DependentUpon>LocationAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LocationOverview.xaml.cs">
+      <DependentUpon>LocationOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -121,11 +127,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EmployeeOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EmployeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LocationAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LocationOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

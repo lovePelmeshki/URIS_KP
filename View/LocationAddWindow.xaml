@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:URIS_KP.View"
         mc:Ignorable="d"
-        Title="LocationAddWindow" Height="450" Width="800">
+        Title="LocationAddWindow" Height="400" Width="400">
     <Grid>
-        <TextBlock Text="location" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Добавить новую локацию" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="20"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Label Height="36" HorizontalContentAlignment="Right">Название</Label>
+            <Label Height="36" HorizontalContentAlignment="Right">Округ</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBox x:Name="textBox" Height="36" Width="160"/>
+            <ComboBox x:Name="comboBox" Height="36" Width="160">
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ЦАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ЮВАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ЮЗАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ЮАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="СВАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="СЗАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="САО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ВАО"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment ="Center" Height="25" VerticalContentAlignment="Center">
+                    <TextBlock Text="ЗАО"/>
+                </ComboBoxItem>
+
+
+            </ComboBox>
+            
+
+        </StackPanel>
+        <Button x:Name="addButton" Grid.ColumnSpan="2" Width="160" Height="36" VerticalAlignment="Bottom" Margin="0,0,0,40" Content="Добавить" Click="addButton_Click"/>
+
     </Grid>
 </Window>

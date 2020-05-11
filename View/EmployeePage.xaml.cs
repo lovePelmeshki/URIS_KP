@@ -41,5 +41,40 @@ namespace URIS_KP.View
             EmployeeAddWindow employeeAddWindow = new EmployeeAddWindow();
             employeeAddWindow.Show();
         }
+
+        private void MenuShowItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                int id = ((Employee)dataGridEmployeePage.SelectedItem).Id;
+                var selectedEmployee = db.Employees.Where(emp => emp.Id == id).Single();
+                EmployeeOverview eo = new EmployeeOverview(selectedEmployee, false);
+                eo.Show();
+            }
+
+        }
+
+        private void MenuEditItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                int id = ((Employee)dataGridEmployeePage.SelectedItem).Id;
+                var selectedEmployee = db.Employees.Where(emp => emp.Id == id).Single();
+                EmployeeOverview eo = new EmployeeOverview(selectedEmployee, true);
+                eo.Show();
+            }
+        }
+
+        private void MenuDeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                int id = ((Employee)dataGridEmployeePage.SelectedItem).Id;
+                var selectedEmployee = db.Employees.Where(emp => emp.Id == id).Single();
+                db.Employees.Remove(selectedEmployee);
+                db.SaveChanges();
+            }
+            Refresh();
+        }
     }
 }
