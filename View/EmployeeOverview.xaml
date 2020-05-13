@@ -12,17 +12,29 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel VerticalAlignment="Center">
-            <Label Content="Id" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
-            <Label Content="Фамилия" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
-            <Label Content="Имя" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <Label Content="Id" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <Label Content="Фамилия" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <Label Content="Имя" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+            <Label Content="Должность" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Height="36" Width="160" Text="{Binding Path=Id}"/>
-            <TextBox x:Name="SecondNameTextBox" HorizontalAlignment="Left"  Height="36" Width="160" Text="{Binding Path=SecondName}"/>
-            <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="36" Width="160" Text="{Binding Path=Name}"/>
+            <TextBox x:Name="IdTextBox" Margin="5" HorizontalAlignment="Left" Height="36" Width="160" Text="{Binding Path=Id}"/>
+            <TextBox x:Name="SecondNameTextBox" Margin="5" HorizontalAlignment="Left"  Height="36" Width="160" Text="{Binding Path=SecondName}"/>
+            <TextBox x:Name="NameTextBox" Margin="5" HorizontalAlignment="Left" Height="36" Width="160" Text="{Binding Path=Name}"/>
+            <ComboBox x:Name="comboBox" Margin="5" HorizontalAlignment="Left" Height="36" Width="160">
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="36" >
+                    <TextBlock Text="Монтер"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="36" >
+                    <TextBlock Text="Механик"/>
+                </ComboBoxItem>
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="36" >
+                    <TextBlock Text="Старший"/>
+                </ComboBoxItem>
+            </ComboBox>
         </StackPanel>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="2"
-                Height="36" Width="160" Margin="0 0 0 80" Content="ОК" Click="Button_Click"/>
+        <Button x:Name="button" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                Height="36" Width="160" Margin="0 0 0 60" Content="ОК" Click="Button_Click"/>
 
     </Grid>
 </Window>

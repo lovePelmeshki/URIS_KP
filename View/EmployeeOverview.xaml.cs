@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace URIS_KP.View
 {
@@ -19,22 +8,45 @@ namespace URIS_KP.View
     /// </summary>
     public partial class EmployeeOverview : Window
     {
+        Employee selectedEmployee;
         public EmployeeOverview()
         {
             InitializeComponent();
         }
+
         public EmployeeOverview(Employee employee, bool IsEditable)
         {
+            selectedEmployee = employee;
             InitializeComponent();
+            button.IsEnabled = IsEditable;
             DataContext = employee;
             IdTextBox.Text = employee.Id.ToString();
             SecondNameTextBox.Text = employee.SecondName;
             NameTextBox.Text = employee.Name;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                try
+                {
+                    selectedEmployee.Id = int.Parse(IdTextBox.Text);
+                    selectedEmployee.Name = NameTextBox.Text;
+                    selectedEmployee.SecondName = SecondNameTextBox.Text;
+                    selectedEmployee.PositionId = comboBox.SelectedIndex + 1;
+                    db.Employees.Add(selectedEmployee);
+                    db.Entry(selectedEmployee).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            Close();
+
         }
     }
 }

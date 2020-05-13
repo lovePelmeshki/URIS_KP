@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:URIS_KP.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EmployeePage" ShowsNavigationUI="False">
+      Title="EmployeePage" ShowsNavigationUI="False" MouseEnter="Page_MouseEnter">
     <Page.Resources>
         <Style x:Key="stdBtn" TargetType="Button">
             <Setter Property="Width" Value="160"/>
@@ -16,6 +16,7 @@
 
     <Grid>
         <DockPanel LastChildFill="True">
+            <TextBox x:Name="search" DockPanel.Dock="Top" Margin="5" TextChanged="search_TextChanged"/>
             <Button x:Name="buttonAddNewEmployee" 
                     DockPanel.Dock="Bottom" 
                     Style="{StaticResource stdBtn}"
@@ -39,6 +40,7 @@
                     <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
                     <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=SecondName}"/>
                     <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Должность" Binding="{Binding Path=Position}"/>
                 </DataGrid.Columns>
 
             </DataGrid>

@@ -27,7 +27,20 @@ namespace URIS_KP.View
         {
             using (DataBaseContext db = new DataBaseContext())
             {
-                dataGridDetectorPage.ItemsSource = db.Detectors.ToList();
+                var detectors = from detec in db.Detectors
+                                join place in db.Places on detec.PlaceId equals place.Id
+                                join loc in db.Locations on place.LocationId equals loc.Id
+                                select new
+                                {
+                                    detec.Id,
+                                    detec.CheckDate,
+                                    detec.InstallationDate,
+                                    detec.Status,
+                                    Location = loc.Name,
+                                    Place = place.Name
+                                };
+                
+                dataGridDetectorPage.ItemsSource = detectors.ToList();
             }
             
         }

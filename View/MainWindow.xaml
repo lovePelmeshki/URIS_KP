@@ -1,8 +1,9 @@
-﻿<Window x:Class="URIS_KP.MainWindow"
+﻿<Controls:MetroWindow x:Class="URIS_KP.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:URIS_KP" xmlns:viewmodel="clr-namespace:URIS_KP.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowState="Maximized"
@@ -33,4 +34,4 @@
 
         
     </Grid>
-</Window>
+</Controls:MetroWindow>
