@@ -88,6 +88,9 @@
     <Compile Include="View\DetectorAddWindow.xaml.cs">
       <DependentUpon>DetectorAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DetectorOverviewWindow.xaml.cs">
+      <DependentUpon>DetectorOverviewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetectorPage.xaml.cs">
       <DependentUpon>DetectorPage.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\DetectorAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetectorOverviewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

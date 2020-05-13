@@ -5,9 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:URIS_KP.View"
         mc:Ignorable="d"
-        Title="DetectorAddWindow" Height="450" Width="800">
+        Title="DetectorAddWindow" Height="350" Width="450">
     <Grid>
-        <TextBlock Text="DETECTOR" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Дата проверки" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <DatePicker x:Name="checkDatePicker" Margin="5" HorizontalAlignment="Left"  Height="36" Width="160"/>
+
+            </StackPanel>
+            <Button x:Name="button" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                Height="36" Width="160" Margin="0 0 0 60" Content="ОК" Click="Button_Click"/>
+
+        </Grid>
 
     </Grid>
 </Window>

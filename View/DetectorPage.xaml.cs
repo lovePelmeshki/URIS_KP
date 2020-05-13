@@ -17,6 +17,26 @@ namespace URIS_KP.View
         }
 
 
+        private Detector FindDetectorById()
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                try
+                {
+                    var selectedCell = dataGrid.SelectedCells[0];
+                    var cellContent = selectedCell.Column.GetCellContent(selectedCell.Item);
+                    int selectedId = int.Parse((cellContent as TextBlock).Text);
+                    var selectedDetector = db.Detectors.Where(emp => emp.Id == selectedId).Single();
+                    return selectedDetector;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+
+            }
+        }
 
         private void buttonAddNewDetector_Click(object sender, RoutedEventArgs e)
         {
@@ -40,9 +60,49 @@ namespace URIS_KP.View
                                     Place = place.Name
                                 };
                 
-                dataGridDetectorPage.ItemsSource = detectors.ToList();
+                dataGrid.ItemsSource = detectors.ToList();
             }
             
+        }
+
+        private void Page_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void MenuShowItem_Click(object sender, RoutedEventArgs e)
+        {
+            Detector detector = FindDetectorById();
+            DetectorOverviewWindow detectorOverviewWindow = new DetectorOverviewWindow(detector, false);
+            detectorOverviewWindow.Show();
+        }
+
+        private void MenuEditItem_Click(object sender, RoutedEventArgs e)
+        {
+            Detector detector = FindDetectorById();
+            DetectorOverviewWindow detectorOverviewWindow = new DetectorOverviewWindow(detector, true);
+            detectorOverviewWindow.Show();
+        }
+
+        private void MenuDeleteItem_Click(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                try
+                {
+                    Detector selectedDetector = FindDetectorById();
+                    db.Entry(selectedDetector).State = System.Data.Entity.EntityState.Deleted;
+                    db.Detectors.Remove(selectedDetector);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            Refresh();
+
         }
     }
 }
