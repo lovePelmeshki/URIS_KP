@@ -6,7 +6,7 @@
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:URIS_KP" xmlns:viewmodel="clr-namespace:URIS_KP.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized"
+        Title="Информационная система" Height="450" Width="800" WindowState="Normal"
         >
     <Window.Resources>
         <Style x:Key="stdBtn" TargetType="Button">
@@ -25,7 +25,6 @@
             <Button Content="Датчики" Margin="1" Click="Button_Detectors_Click"/>
             <Button Content="Обслуживание" Margin="1" Click="Button_Service_Click"/>
             <Button Content="Персоснал" Margin="1" Click="Button_Employees_Click"/>
-            <TextBox Text="{Binding Nums}"/>
         </StackPanel>
 
         <Frame x:Name="Main" Margin="0,50,0,0"  Source="/URIS_KP;component/View/MainPage.xaml" NavigationUIVisibility="Hidden" >

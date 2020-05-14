@@ -17,7 +17,19 @@
     <Grid>
         <DockPanel LastChildFill="True">
             <Button x:Name="buttonAddNewService" DockPanel.Dock="Bottom" Style="{StaticResource stdBtn}" Content="Добавить" Margin="5" Click="buttonAddNewService_Click"/>
-            <DataGrid x:Name="dataGridServicePage" Margin="5,5,5,0">
+            <DataGrid x:Name="dataGridServicePage" Margin="5,5,5,0"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Path=Type}"/>
+                    <DataGridTextColumn Header="Локация" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Дата обслуживания" Binding="{Binding Path=ServiceDate, StringFormat=dd.MM.yyyy}"/>
+                    <DataGridTextColumn Header="Следующее обслуживание" Binding="{Binding Path=NextServiceDate, StringFormat=dd.MM.yyyy}"/>
+                    <DataGridTextColumn Header="Датчик" Binding="{Binding Path=DetectorId}"/>
+                    <DataGridTextColumn Header="Сотрудник" Binding="{Binding Path=Employee}"/>
+                </DataGrid.Columns>
 
             </DataGrid>
         </DockPanel>

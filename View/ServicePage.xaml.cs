@@ -30,7 +30,22 @@ namespace URIS_KP.View
         {
             using (DataBaseContext db = new DataBaseContext())
             {
-                dataGridServicePage.ItemsSource = db.Services.ToList();
+                var services = from serv in db.Services
+                               join emp in db.Employees on serv.EmployeeId equals emp.Id
+                               join detec in db.Detectors on serv.DetectorId equals detec.Id
+                               join pls in db.Places on detec.PlaceId equals pls.Id
+                               join loc in db.Locations on pls.LocationId equals loc.Id
+                               select new
+                               {
+                                   serv.Id,
+                                   serv.Type,
+                                   loc.Name,
+                                   serv.ServiceDate,
+                                   serv.NextServiceDate,
+                                   serv.DetectorId,
+                                   Employee = emp.SecondName
+                               };
+                dataGridServicePage.ItemsSource = services.ToList();
             }
 
         }

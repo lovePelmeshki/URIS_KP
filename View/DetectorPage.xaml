@@ -16,7 +16,6 @@
 
     <Grid>
         <DockPanel LastChildFill="True">
-            <TextBlock DockPanel.Dock="Top" Text="Сделать поиск и фильтрацию" Height="60" FontSize="40"/>
             <Button DockPanel.Dock="Bottom" 
                     x:Name="buttonAddNewDetector" 
                     Height="36" 

@@ -83,7 +83,6 @@
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\Service.cs" />
-    <Compile Include="Services\IDataService.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\DetectorAddWindow.xaml.cs">
       <DependentUpon>DetectorAddWindow.xaml</DependentUpon>
