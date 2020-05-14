@@ -48,7 +48,6 @@
                     <DataGridTextColumn Header="Локация"  Binding="{Binding Path=Location}"/>
                     <DataGridTextColumn Header="Место установки"  Binding="{Binding Path=Place}"/>
                 </DataGrid.Columns>
-
             </DataGrid>
         </DockPanel>
 

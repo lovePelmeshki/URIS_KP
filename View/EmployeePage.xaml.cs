@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,9 +32,12 @@ namespace URIS_KP.View
                                     PositionId = pos.Id,
                                     Position = pos.Name
                                 };
-
                 dataGridEmployeePage.ItemsSource = employees.ToList();
+
             }
+
+
+
 
         }
         private Employee FindEmployeeById()
