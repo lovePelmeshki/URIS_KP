@@ -1,0 +1,51 @@
+﻿<Page x:Class="URIS_KP.View.EmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:URIS_KP.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeePage" ShowsNavigationUI="False" MouseEnter="Page_MouseEnter">
+    <Page.Resources>
+        <Style x:Key="stdBtn" TargetType="Button">
+            <Setter Property="Width" Value="160"/>
+            <Setter Property="Height" Value="36"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <TextBox x:Name="search" DockPanel.Dock="Top" Margin="5" TextChanged="search_TextChanged"/>
+            <Button x:Name="buttonAddNewEmployee" 
+                    DockPanel.Dock="Bottom" 
+                    Style="{StaticResource stdBtn}"
+                    Margin="0,0,0,5"
+                    Content="Добавить"
+                    Click="buttonAddNewEmployee_Click"/>
+            <DataGrid x:Name="dataGridEmployeePage"
+                      DockPanel.Dock="Top" 
+                      Margin="5" 
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Просмотр" Click="MenuShowItem_Click"/>
+                        <MenuItem Header="Редактировать" Click="MenuEditItem_Click"/>
+                        <MenuItem Header="Удалить" Click="MenuDeleteItem_Click"/>
+                        
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=SecondName}"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Должность" Binding="{Binding Path=Position}"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </DockPanel>
+
+        
+    </Grid>
+</Page>

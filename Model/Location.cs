@@ -22,6 +22,10 @@ namespace URIS_KP
         /// Список датчиков, установленных на текущей локации
         /// </summary>
         public virtual ICollection<Place> Places { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
 
     }
 }
